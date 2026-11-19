@@ -62,7 +62,7 @@ $(BUILD_DIR)/$(TARGET).pg5: $(BUILD_DIR)/$(TARGET).elf tools/pg5tool.py
 T = $(BUILD_DIR)/test
 test:
 	mkdir -p $(T)
-	gcc -O2 -Wall -DGB47_TEST -Isrc -Ithird_party/peanut_gb -o $(T)/gbtest test/gbtest.c src/gb.c src/sound.c
+	gcc -std=gnu11 -O2 -Wall -DGB47_TEST -Isrc -Ithird_party/peanut_gb -o $(T)/gbtest test/gbtest.c src/gb.c src/sound.c
 	cd $(T) && ./gbtest
 
 demo:
@@ -71,7 +71,7 @@ demo:
 S = $(BUILD_DIR)/sim
 sim:
 	mkdir -p $(S)
-	gcc -O2 -w '-D__packed=__attribute__((__packed__))' '-D__weak=__attribute__((weak))' -DGB47_SIM \
+	gcc -std=gnu11 -O2 -w '-D__packed=__attribute__((__packed__))' '-D__weak=__attribute__((weak))' -DGB47_SIM \
 	    -Itest/sim -Isrc -Ithird_party/peanut_gb -o $(S)/sim test/sim/gbsim.c src/main.c src/gb.c src/sound.c \
 	    src/screen.c src/keys.c
 
@@ -104,7 +104,7 @@ fps:
 
 fps-sim:
 	mkdir -p $(FPS_DIR)
-	gcc -O2 -w '-D__packed=__attribute__((__packed__))' '-D__weak=__attribute__((weak))' -DGB47_SIM \
+	gcc -std=gnu11 -O2 -w '-D__packed=__attribute__((__packed__))' '-D__weak=__attribute__((weak))' -DGB47_SIM \
 	    -Itest/sim -Itools/fps47 -Isrc -o $(FPS_DIR)/sim test/sim/sim.c test/sim/sercon_sim.c tools/fps47/fps47.c
 
 # the simulator's screens: the intro, the results, WATCH GB, WATCH ZX

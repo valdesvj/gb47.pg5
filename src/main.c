@@ -231,7 +231,7 @@ static void state_save(void) {
   if (f_open(&f, p, FA_WRITE | FA_CREATE_ALWAYS) == FR_OK) { f_write(&f, b, n, &bw); f_close(&f); }
   sys_disk_write_enable(0);
   free(b);
-  snprintf(msg, sizeof msg, bw == n ? "state saved: %s" : "state NOT saved: %s", p + sizeof DIR);
+  snprintf(msg, sizeof msg, bw == n ? "state saved: %.40s" : "state NOT saved: %.40s", p + sizeof DIR);
 }
 
 static int state_load(void) {                    /* 1 loaded */
@@ -240,13 +240,13 @@ static int state_load(void) {                    /* 1 loaded */
   sav_path(p, "STA");
   uint32_t n = gb_state_size();
   FIL f; UINT br = 0;
-  if (f_open(&f, p, FA_READ) != FR_OK) { snprintf(msg, sizeof msg, "no state saved (%s)", p + sizeof DIR); return 0; }
+  if (f_open(&f, p, FA_READ) != FR_OK) { snprintf(msg, sizeof msg, "no state saved (%.40s)", p + sizeof DIR); return 0; }
   uint8_t *b = f_size(&f) == n ? malloc(n) : NULL;
   if (b) f_read(&f, b, n, &br);
   f_close(&f);
   int ok = b && br == n && gb_state_load(b, n) == 0;
   free(b);
-  snprintf(msg, sizeof msg, ok ? "state loaded: %s" : "%s: not this game's state", p + sizeof DIR);
+  snprintf(msg, sizeof msg, ok ? "state loaded: %.40s" : "%.40s: not this game's state", p + sizeof DIR);
   return ok;
 }
 
