@@ -1,8 +1,8 @@
 # GB47 0.1 — a Game Boy for the SwissMicros DM42n
 
-First release, for testing: Game Boy games on the DM42n, with the tune on the buzzer. It passes the Game Boy test
-cartridges on the PC (Blargg's CPU tests, dmg-acid2) and runs in the simulator; **how fast it runs on the
-calculator is what this release is for**. Please send the speed line (F6) from your games, on battery and on USB.
+First release, for testing: Game Boy games on the DM42n, with the tune on the buzzer. **Zelda: Link's Awakening
+runs on the DM42n.** It passes the Game Boy test cartridges on the PC (Blargg's CPU tests, dmg-acid2). Please send the
+speed line (F6) from your games, on battery and on USB.
 
 **Files**
 - `GB47.pg5` — the program (DMCP5 3.57 or later). Copy it to the calculator's disk, then **Load program → GB47.pg5**.

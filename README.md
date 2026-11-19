@@ -17,7 +17,7 @@
 - **Big cartridges** (Pokémon 1 MB, Zelda 512 KB) read from the disk 4 KB at a time into a cache, as HP47 reads the
   HP 48's ROM, when the heap can't hold the whole ROM.
 
-**Status: [release 0.1](docs/RELEASE-0.1.md), the first version ([manual](docs/MANUAL.md)). Tested in the PC simulator and with the PC tests, not yet on a DM42n.**
+**Status: [release 0.1](docs/RELEASE-0.1.md), the first version ([manual](docs/MANUAL.md)). Zelda: Link's Awakening runs on the DM42n.**
 How fast it runs on the calculator is the next thing to measure (see *Speed*).
 
 ## Installing and playing

@@ -17,7 +17,7 @@ This project was **developed with the help of AI** — Claude (Anthropic), Gemin
 - Picture: dmg-acid2 gives the reference picture (Peanut-GB's hash)
 - The ROM cache, save states, the sound registers and the demo's tune: `make test`
 - Every screen checked in the PC simulator (`make shots`, `make fps-shots`) before a commit
-- The LCD timings measured on real DM42n hardware (FPS47); GB47 itself to be tested on the DM42n, on battery and on USB power
+- Tested on real DM42n hardware: Zelda: Link's Awakening runs; the LCD timings measured with FPS47, on battery and on USB power
 
 ## License
 
