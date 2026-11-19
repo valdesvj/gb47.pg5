@@ -1,4 +1,4 @@
-GB47 - towards a Game Boy emulator for the SwissMicros DM42n
+GB47 - a Game Boy emulator for the SwissMicros DM42n
 Copyright (C) 2026 Victor Valdes <valdes.vj@gmail.com>
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public
@@ -8,7 +8,11 @@ version. See LICENSE.
 Exceptions and third-party material:
   - dmcp/, stm32_program.ld: SwissMicros DMCP5 SDK, BSD 3-Clause (LICENSE.DMCP5_SDK), released "NOMAS".
   - src/sercon_ifc.h: the names and values of SwissMicros' preliminary DMCP5 Serial Console API (IFC 3.18).
-  - tools/pg5tool.py, test/sim: from Chess 47 and TERM47 (same author, GPL v3).
+  - tools/pg5tool.py, test/sim: from Chess 47, TERM47, ZX47 and HP47 (same author, GPL v3).
+  - third_party/peanut_gb/peanut_gb.h: Peanut-GB 1.3.0 by Mahyar Koshkouei, MIT License (the licence is at the top
+    of the file; parts from SameBoy, MIT, Lior Halphon). Unchanged.
+  - test/roms: test cartridges for the PC tests only (see test/roms/README.md): Blargg's cpu_instrs and
+    instr_timing (freely distributed by their author), dmg-acid2 by Matt Currie (MIT). Taken from Peanut-GB's tests.
 
 Written with the help of AI (Claude by Anthropic). I reviewed and checked the results and take full responsibility
 for this project, its correctness and any mistakes in it.

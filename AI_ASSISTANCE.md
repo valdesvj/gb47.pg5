@@ -6,14 +6,15 @@ This project was **developed with the help of AI** — Claude (Anthropic), Gemin
 
 ## Responsible use
 
-- ✅ **I checked the results** — FPS47's numbers come from my own DM42n, on battery and on USB power; the emulator will be checked against known test ROMs
+- ✅ **I checked the results** — FPS47's numbers come from my own DM42n, on battery and on USB power; the emulator is checked against known test ROMs (Blargg's CPU tests, dmg-acid2) with `make test`
 - ✅ **I maintained domain expertise** — I guide the AI with the design decisions: the DM42n's screen, keys and memory, and what is playable on a calculator
 - ✅ **I take full responsibility** — The work is mine; any errors are mine to fix
 - ✅ **I'm transparent** — This file documents how AI was used
 
 ## Testing & Validation
 
-- Every screen checked in the PC simulator (`make fps-shots`) before a commit
+- `make test` (Blargg's cpu_instrs and instr_timing, dmg-acid2, the ROM cache, save states, the sound) before a commit
+- Every screen checked in the PC simulator (`make shots`, `make fps-shots`) before a commit
 - The LCD layout is learnt on the calculator at start (no undocumented detail assumed)
 - Timings measured on real DM42n hardware with DMCP5 3.58
 

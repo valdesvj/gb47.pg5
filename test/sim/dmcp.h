@@ -204,3 +204,4 @@
 #undef sdb
 extern sys_sdb_t sim_sdb;
 #define sdb sim_sdb
+int __sysfn_read_key(int *k1, int *k2);
