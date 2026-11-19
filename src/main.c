@@ -37,11 +37,12 @@ static int loaded;                               /* a game is in */
 static int block;                                /* B held down by SHIFT */
 
 /* ------------------------------------------------------------------ text */
-static void text(int x, int y, const char *s, int inv) {
-  t20->inv = inv;
+static void text(int x, int y, const char *s, int inv) {   /* as Chess 47: no line fill (it would clear the row) */
+  uint8_t lnf = t20->lnfill, nl = t20->newln;
+  t20->lnfill = 0; t20->newln = 0; t20->inv = (uint8_t)inv;
   lcd_setXY(t20, x, y);
   lcd_writeText(t20, s);
-  t20->inv = 0;
+  t20->inv = 0; t20->lnfill = lnf; t20->newln = nl;
 }
 
 static void bar(const char *s) { lcd_fill_rect(0, 0, LCD_X, 22, 1); text(4, 1, s, 1); }

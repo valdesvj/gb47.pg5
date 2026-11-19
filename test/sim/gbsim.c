@@ -68,6 +68,11 @@ int lcd_lineHeight(disp_stat_t *ds) { return ds->f->height; }
 int lcd_textWidth(disp_stat_t *ds, const char *t) { return (int)strlen(t) * fw(ds); }
 void lcd_setXY(disp_stat_t *ds, int x, int y) { ds->x = (int16_t)x; ds->y = (int16_t)y; }
 void lcd_writeText(disp_stat_t *ds, const char *s) {
+  if (ds->lnfill) {                          /* as DMCP: the whole text line is cleared first (all of LCD_X) */
+    int h = lcd_lineHeight(ds);
+    lcd_fill_rect(0, (uint32_t)(ds->y < 0 ? 0 : ds->y), LCD_X, (uint32_t)h, 0);
+    for (int i = 0; i < ntxt; i++) if (txt[i].y < ds->y + h && txt[i].y + h > ds->y) txt[i].s[0] = 0;
+  }
   if (ntxt < 600) {
     Txt *t = &txt[ntxt++];
     t->font = ds->f == &f24 ? 24 : 20;
