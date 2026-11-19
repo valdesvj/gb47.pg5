@@ -4,6 +4,11 @@ First release, for testing: Game Boy games on the DM42n, with the tune on the bu
 runs on the DM42n.** It passes the Game Boy test cartridges on the PC (Blargg's CPU tests, dmg-acid2). Please send the
 speed line (F6) from your games, on battery and on USB.
 
+**Built on ZX47 and FPS47.** [ZX47](https://github.com/valdesvj/zx47.pg5), the ZX Spectrum emulator for the DM42n,
+is GB47's base: the loop, the screen code, the menu, the keys and the simulator come from it. The ROM cache comes from
+[HP47](https://github.com/valdesvj/hp47.pg5). FPS47 (in this repo) measured the DM42n's LCD first (about 0.22 ms a
+line, 48 ms for a whole 1.5x Game Boy picture), and GB47 is built around those numbers.
+
 **Files**
 - `GB47.pg5` — the program (DMCP5 3.57 or later). Copy it to the calculator's disk, then **Load program → GB47.pg5**.
 - `GB47DEMO.GB` — our own little cartridge (grey bands scrolling, a ball the pad moves, a tune): put it in a `GB47`
