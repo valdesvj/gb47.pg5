@@ -24,5 +24,5 @@ calculator is what this release is for**. Please send the speed line (F6) from y
 **Not yet:** Game Boy Color-only games, the noise channel and chords (one buzzer voice), link cable.
 
 See the [manual](MANUAL.md). GPL-3.0-or-later © 2026 Victor Valdes; written with the help of AI (`AI_ASSISTANCE.md`).
-No games included: use your own cartridges' dumps or homebrew. Game Boy is a trademark of Nintendo; this project is
-not affiliated with or endorsed by Nintendo or SwissMicros. Please don't contact SwissMicros about this program.
+Peanut-GB is MIT; the DMCP5 SDK is BSD-3 ("NOMAS"). No games included. Please don't contact SwissMicros about this
+program. Game Boy is a trademark of Nintendo; this project is not affiliated with or endorsed by Nintendo or SwissMicros.

@@ -6,7 +6,7 @@
 # make test            the PC tests: Blargg's CPU tests, dmg-acid2, the ROM cache, save states, the sound
 # make sim             the PC simulator (build/sim/sim); make shots: its screens -> build/sim/run/*.png
 # make demo            release/GB47DEMO.GB, our own little cartridge (tools/mkdemo.py)
-# make zip             build/GB47-$(VERSION).zip for the GitHub release: GB47.pg5, the demo, the manual, LICENSE
+# make zip             build/GB47-$(VERSION).zip for the GitHub release: GB47.pg5, the demo, the manual, the licences, AI notes
 # make fps             tools/fps47: FPS47.pg5, the LCD frame-rate test -> build/fps/FPS47.pg5
 # make fps-sim         its PC simulator (build/fps/sim); screens: make fps-shots -> build/fps/run/*.png
 
@@ -62,7 +62,8 @@ $(BUILD_DIR)/$(TARGET).pg5: $(BUILD_DIR)/$(TARGET).elf tools/pg5tool.py
 VERSION = $(shell sed -n 's/.*PROGRAM_VERSION *"\(.*\)".*/\1/p' src/main.h)
 zip: $(BUILD_DIR)/GB47.pg5
 	rm -rf $(BUILD_DIR)/zip && mkdir -p $(BUILD_DIR)/zip/GB47-$(VERSION)
-	cp $(BUILD_DIR)/GB47.pg5 release/GB47DEMO.GB docs/MANUAL.md LICENSE $(BUILD_DIR)/zip/GB47-$(VERSION)/
+	cp $(BUILD_DIR)/GB47.pg5 release/GB47DEMO.GB docs/MANUAL.md LICENSE AI_ASSISTANCE.md $(BUILD_DIR)/zip/GB47-$(VERSION)/
+	cp third_party/peanut_gb/LICENSE $(BUILD_DIR)/zip/GB47-$(VERSION)/LICENSE.Peanut-GB
 	sed -i 's|(../README.md)|(https://github.com/valdesvj/gb47.pg5)|' $(BUILD_DIR)/zip/GB47-$(VERSION)/MANUAL.md
 	cd $(BUILD_DIR)/zip && $(PYTHON) -c "import shutil; shutil.make_archive('../GB47-$(VERSION)', 'zip', '.', 'GB47-$(VERSION)')"
 	@echo "-> $(BUILD_DIR)/GB47-$(VERSION).zip"

@@ -199,9 +199,12 @@ the real speed.
 
 ## License
 
-GPL-3.0-or-later (see `LICENSE` and `NOTICE`). Peanut-GB is MIT; the DMCP5 SDK files are BSD-3 (`LICENSE.DMCP5_SDK`).
+Written with the help of AI. See `AI_ASSISTANCE.md` for how it was used and checked.
 
-This project was written with the help of AI; see [AI_ASSISTANCE.md](AI_ASSISTANCE.md).
+GPL-3.0-or-later © 2026 Victor Valdes. `dmcp/` and `stm32_program.ld` are from the SwissMicros
+DMCP5 SDK (BSD-3, released "NOMAS": not manufacturer supported). The Game Boy core, Peanut-GB, is MIT
+(`third_party/peanut_gb/LICENSE`). The test cartridges in `test/roms` are for the PC tests only (`test/roms/README.md`).
+See `NOTICE`. Please don't contact SwissMicros about this program.
 
-SwissMicros and DM42 are trademarks of their owners. Game Boy is a trademark of Nintendo. This project is not
-affiliated with or endorsed by them, and comes with no games: use homebrew games or your own dumps.
+Game Boy is a trademark of Nintendo. This project is not affiliated with or endorsed by Nintendo or SwissMicros, and
+comes with no games: use homebrew games or your own cartridges' dumps.
